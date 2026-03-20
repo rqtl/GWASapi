@@ -1,7 +1,7 @@
 ## GWASapi - R package to connect to the [NHGRI-EBI GWAS Catalog of Summary Statistics](https://www.ebi.ac.uk/gwas)
 
 
-[![Build Status](https://travis-ci.org/rqtl/GWASapi.svg?branch=master)](https://travis-ci.org/rqtl/GWASapi)
+  [![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
 
 ---
 
