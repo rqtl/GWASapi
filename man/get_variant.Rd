@@ -4,8 +4,15 @@
 \alias{get_variant}
 \title{Get associations for a given variant}
 \usage{
-get_variant(rsnum, chr = NULL, p_lower = NULL, p_upper = NULL,
-  study = NULL, start = NULL, size = NULL)
+get_variant(
+  rsnum,
+  chr = NULL,
+  p_lower = NULL,
+  p_upper = NULL,
+  study = NULL,
+  start = NULL,
+  size = NULL
+)
 }
 \arguments{
 \item{rsnum}{RS number for a variant}

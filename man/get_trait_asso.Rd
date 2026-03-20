@@ -4,8 +4,14 @@
 \alias{get_trait_asso}
 \title{Get GWAS associations for a particular trait}
 \usage{
-get_trait_asso(trait = NULL, study = NULL, p_lower = NULL,
-  p_upper = NULL, start = NULL, size = NULL)
+get_trait_asso(
+  trait = NULL,
+  study = NULL,
+  p_lower = NULL,
+  p_upper = NULL,
+  start = NULL,
+  size = NULL
+)
 }
 \arguments{
 \item{trait}{Restrict to a particular study}
