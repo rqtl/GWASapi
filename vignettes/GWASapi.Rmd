@@ -65,7 +65,7 @@ list_studies(size=5)
 To retrieve _all_ studies, set a higher limit
 
 ```{r list_all_studies}
-all_studies <- list_studies(size=1000)
+all_studies <- list_studies(size=2000)
 length(all_studies)
 ```
 
@@ -73,19 +73,13 @@ To get a list of traits, use `list_traits()`. Again the default is to
 return just 20 values. To get all traits, use the `size` argument.
 
 ```{r list_all_traits}
-all_traits <- list_traits(size=1000)
+all_traits <- list_traits(size=2000)
 length(all_traits)
 ```
 
 The traits are returned as identifiers like `r all_traits[1]`. To get
 a description of a trait, you can use the ontology lookup service, for
 example <https://www.ebi.ac.uk/efo/EFO_0001360>
-
-Note that the traits returned are not all distinct.
-
-```{r table_table_traits}
-table(table(all_traits))
-```
 
 Chromosomes are stored as integers 1-24.
 
