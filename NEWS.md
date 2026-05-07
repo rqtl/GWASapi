@@ -1,7 +1,7 @@
-## GWASapi 0.1-4 (2026-05-05)
+## GWASapi 0.1-4 (2026-05-07)
 
-- Increase the default delay time to 10 sec due to "too many requests"
-  errors.
+- Increase the default delay time to 2 sec due to "too many requests"
+  errors, though it doesn't solve the problem.
 
 
 ## GWASapi 0.1-3 (2026-03-20)

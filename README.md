@@ -60,7 +60,7 @@ vignette("GWASapi")
 ```
 
 Note that we enforce a delay between calls to the API, to slow
-repeated calls within a loop. The default is 10 sec because we were
+repeated calls within a loop. The default is 2 sec because we were
 getting a lot of "too many requests" errors. It can be
 controlled with the option `GWASapi_delay`. For example, to make the
 delay 2 seconds, use:
