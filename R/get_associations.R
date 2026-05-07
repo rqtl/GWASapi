@@ -109,7 +109,7 @@ get_asso <-
 #'
 #' @examples
 #  this one tends to give a "too many requests" error
-#' \donttest{result <- get_trait_asso("EFO_0001360", p_upper=1e-10)}
+#' \dontrun{result <- get_trait_asso("EFO_0001360", p_upper=1e-10)}
 #' @seealso [get_variant()], [get_asso()]
 #' @export
 
