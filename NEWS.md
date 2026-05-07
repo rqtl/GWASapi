@@ -3,6 +3,9 @@
 - Increase the default delay time to 2 sec due to "too many requests"
   errors, though it doesn't solve the problem.
 
+- Revise the vignette so that the code isn't actually run when it is
+  compiled, as I was getting too many errors.
+
 
 ## GWASapi 0.1-3 (2026-03-20)
 

@@ -9,8 +9,7 @@ vignette: >
 
 ```{r knitr_options, include=FALSE}
 library(knitr)
-opts_chunk$set(fig.width=7, fig.height=4.5,
-               dev.args=list(pointsize=16))
+opts_chunk$set(eval=FALSE)
 options(width=95)
 ```
 
@@ -30,13 +29,13 @@ You can install GWASapi from
 You first need to install the
 [remotes](https://remotes.r-lib.org).
 
-```{r install_remotes, eval=FALSE}
+```{r install_remotes}
 install.packages("remotes")
 ```
 
 Then use `remotes::install_github()` to install GWASapi.
 
-```{r install_with_remotes, eval=FALSE}
+```{r install_with_remotes}
 library(remotes)
 install_github("rqtl/GWASapi")
 ```
@@ -66,7 +65,6 @@ To retrieve _all_ studies, set a higher limit
 
 ```{r list_all_studies}
 all_studies <- list_studies(size=2000)
-length(all_studies)
 ```
 
 To get a list of traits, use `list_traits()`. Again the default is to
@@ -74,10 +72,9 @@ return just 20 values. To get all traits, use the `size` argument.
 
 ```{r list_all_traits}
 all_traits <- list_traits(size=2000)
-length(all_traits)
 ```
 
-The traits are returned as identifiers like `r all_traits[1]`. To get
+The traits are returned as identifiers like `"EFO_0000249"`. To get
 a description of a trait, you can use the ontology lookup service, for
 example <https://www.ebi.ac.uk/efo/EFO_0001360>
 
@@ -94,11 +91,11 @@ To get associations for a specific variant by its rs-number, use
 `get_variant()`. If you know the chromosome it is on, you'll get
 faster results by providing the chromosome. And again, the default is
 to return just 20 values, so use the `size` and `start` arguments if
-you want a comprehensive list.
+you want a comprehensive list. The result is a data frame with columns such as
+`base_pair_location`, `p_value`, `study_accession`, and `trait`.
 
 ```{r get_variant}
 result <- get_variant("rs2228603", 19, size=5)
-result[,c("p_value", "study_accession", "trait")]
 ```
 
 Use the arguments `p_lower` and `p_upper` to focus on associations
@@ -107,7 +104,6 @@ associations with p-value < 10^-10^, you would do:
 
 ```{r get_variant_pupper}
 result <- get_variant("rs2228603", 19, p_upper=1e-10)
-result[,c("p_value", "study_accession", "trait")]
 ```
 
 To get associations for a specific region, use `get_asso()`.
@@ -115,25 +111,17 @@ For example, to get the region from 19.2 Mbp to 19.3 Mbp on chr 19:
 
 ```{r get_asso}
 result <- get_asso(chr=19, bp_lower=19200000, bp_upper=19300000)
-result[,c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
 ```
 
 You can restrict those results to a particular study.
 
 ```{r get_asso_by_study}
 result <- get_asso(chr=19, bp_lower=19200000, bp_upper=19300000, study="GCST000392")
-result[,c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
 ```
 
 To get associations for a given trait, use `get_trait_asso()`. You
 can't restrict this to a given chromosome region.
 
-```{r sys_sleep_to_avoid_error, include=FALSE}
-Sys.sleep(10)
-```
-
 ```{r get_trait_asso}
 result <- get_trait_asso("EFO_0001360", p_upper=1e-100, size=5)
-nrow(result)
-result[, c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
 ```

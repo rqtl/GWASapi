@@ -369,23 +369,17 @@ is to return just 20 studies. You can control that limit with the
 argument <code>size</code>. You can also use <code>start</code> to step
 through the full set.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">list_studies</span>(<span class="at">size=</span><span class="dv">5</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;GCST000028&quot; &quot;GCST000392&quot; &quot;GCST000510&quot; &quot;GCST000553&quot; &quot;GCST000568&quot;</code></pre>
 <p>To retrieve <em>all</em> studies, set a higher limit</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>all_studies <span class="ot">&lt;-</span> <span class="fu">list_studies</span>(<span class="at">size=</span><span class="dv">2000</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">length</span>(all_studies)</span></code></pre></div>
-<pre><code>## [1] 1051</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>all_studies <span class="ot">&lt;-</span> <span class="fu">list_studies</span>(<span class="at">size=</span><span class="dv">2000</span>)</span></code></pre></div>
 <p>To get a list of traits, use <code>list_traits()</code>. Again the
 default is to return just 20 values. To get all traits, use the
 <code>size</code> argument.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>all_traits <span class="ot">&lt;-</span> <span class="fu">list_traits</span>(<span class="at">size=</span><span class="dv">2000</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">length</span>(all_traits)</span></code></pre></div>
-<pre><code>## [1] 505</code></pre>
-<p>The traits are returned as identifiers like EFO_0000249. To get a
-description of a trait, you can use the ontology lookup service, for
-example <a href="https://www.ebi.ac.uk/efo/EFO_0001360" class="uri">https://www.ebi.ac.uk/efo/EFO_0001360</a></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>all_traits <span class="ot">&lt;-</span> <span class="fu">list_traits</span>(<span class="at">size=</span><span class="dv">2000</span>)</span></code></pre></div>
+<p>The traits are returned as identifiers like
+<code>&quot;EFO_0000249&quot;</code>. To get a description of a trait, you can use
+the ontology lookup service, for example <a href="https://www.ebi.ac.uk/efo/EFO_0001360" class="uri">https://www.ebi.ac.uk/efo/EFO_0001360</a></p>
 <p>Chromosomes are stored as integers 1-24.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">list_chr</span>()</span></code></pre></div>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">list_chr</span>()</span></code></pre></div>
 </div>
 <div id="get-associations" class="section level2">
 <h2>Get associations</h2>
@@ -393,94 +387,26 @@ example <a href="https://www.ebi.ac.uk/efo/EFO_0001360" class="uri">https://www.
 <code>get_variant()</code>. If you know the chromosome it is on, you’ll
 get faster results by providing the chromosome. And again, the default
 is to return just 20 values, so use the <code>size</code> and
-<code>start</code> arguments if you want a comprehensive list.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_variant</span>(<span class="st">&quot;rs2228603&quot;</span>, <span class="dv">19</span>, <span class="at">size=</span><span class="dv">5</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>result[,<span class="fu">c</span>(<span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
-<pre><code>##      p_value study_accession       trait
-## 0 0.12280000      GCST000028 EFO_0001360
-## 1 0.02980604      GCST000392 EFO_0001359
-## 2 0.26000000      GCST000510 EFO_0004309
-## 3 0.63000000      GCST000553 EFO_0004839
-## 4 0.39340000      GCST000568 EFO_0004465</code></pre>
+<code>start</code> arguments if you want a comprehensive list. The
+result is a data frame with columns such as
+<code>base_pair_location</code>, <code>p_value</code>,
+<code>study_accession</code>, and <code>trait</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_variant</span>(<span class="st">&quot;rs2228603&quot;</span>, <span class="dv">19</span>, <span class="at">size=</span><span class="dv">5</span>)</span></code></pre></div>
 <p>Use the arguments <code>p_lower</code> and <code>p_upper</code> to
 focus on associations with p-value in a specified range. For example, to
 get all of the associations with p-value &lt; 10<sup>-10</sup>, you
 would do:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_variant</span>(<span class="st">&quot;rs2228603&quot;</span>, <span class="dv">19</span>, <span class="at">p_upper=</span><span class="fl">1e-10</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>result[,<span class="fu">c</span>(<span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
-<pre><code>##          p_value study_accession       trait
-## 0   1.739000e-57      GCST002216 EFO_0004530
-## 1   1.049000e-62      GCST002221 EFO_0004574
-## 2   4.433000e-44      GCST002222 EFO_0004611
-## 3   3.652000e-11      GCST007516 EFO_0001360
-## 4   3.652000e-11      GCST007518 EFO_0001360
-## 5  2.225074e-308      GCST010144 EFO_0004631
-## 6   4.782919e-13      GCST010772 EFO_0004918
-## 7   2.926260e-17    GCST90000614 EFO_0004631
-## 8   6.308030e-18    GCST90000615 EFO_0004631
-## 9   3.616430e-17    GCST90000616 EFO_0004631
-## 10  1.431780e-15    GCST90000617 EFO_0004631
-## 11  2.721982e-14    GCST90000618 EFO_0004631
-## 12 1.800000e-205    GCST90002412 EFO_0004611
-## 13  3.750000e-64    GCST90013663 EFO_0004735
-## 14  1.535000e-33    GCST90013664 EFO_0004736
-## 15  8.800000e-65    GCST90016673 EFO_0010821</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_variant</span>(<span class="st">&quot;rs2228603&quot;</span>, <span class="dv">19</span>, <span class="at">p_upper=</span><span class="fl">1e-10</span>)</span></code></pre></div>
 <p>To get associations for a specific region, use
 <code>get_asso()</code>. For example, to get the region from 19.2 Mbp to
 19.3 Mbp on chr 19:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_asso</span>(<span class="at">chr=</span><span class="dv">19</span>, <span class="at">bp_lower=</span><span class="dv">19200000</span>, <span class="at">bp_upper=</span><span class="dv">19300000</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>result[,<span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;base_pair_location&quot;</span>, <span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
-<pre><code>##    chromosome base_pair_location    p_value study_accession       trait
-## 0          19           19219115 0.12280000      GCST000028 EFO_0001360
-## 1          19           19230637 0.12400000      GCST000028 EFO_0001360
-## 2          19           19233770 0.12400000      GCST000028 EFO_0001360
-## 3          19           19238138 0.27990000      GCST000028 EFO_0001360
-## 4          19           19250926 0.48100000      GCST000028 EFO_0001360
-## 5          19           19262880 0.76410000      GCST000028 EFO_0001360
-## 6          19           19263252 0.48500000      GCST000028 EFO_0001360
-## 7          19           19296909 0.13780000      GCST000028 EFO_0001360
-## 8          19           19208675 0.34851112      GCST000392 EFO_0001359
-## 9          19           19219115 0.02980604      GCST000392 EFO_0001359
-## 10         19           19224274 0.72647403      GCST000392 EFO_0001359
-## 11         19           19225799 0.09019226      GCST000392 EFO_0001359
-## 12         19           19230637 0.59469796      GCST000392 EFO_0001359
-## 13         19           19233770 0.93955453      GCST000392 EFO_0001359
-## 14         19           19247863 0.76167551      GCST000392 EFO_0001359
-## 15         19           19250926 0.24164792      GCST000392 EFO_0001359
-## 16         19           19274602 0.71375546      GCST000392 EFO_0001359
-## 17         19           19277637 0.43687139      GCST000392 EFO_0001359
-## 18         19           19280236 0.76699603      GCST000392 EFO_0001359
-## 19         19           19281592 0.70582591      GCST000392 EFO_0001359</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_asso</span>(<span class="at">chr=</span><span class="dv">19</span>, <span class="at">bp_lower=</span><span class="dv">19200000</span>, <span class="at">bp_upper=</span><span class="dv">19300000</span>)</span></code></pre></div>
 <p>You can restrict those results to a particular study.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_asso</span>(<span class="at">chr=</span><span class="dv">19</span>, <span class="at">bp_lower=</span><span class="dv">19200000</span>, <span class="at">bp_upper=</span><span class="dv">19300000</span>, <span class="at">study=</span><span class="st">&quot;GCST000392&quot;</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>result[,<span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;base_pair_location&quot;</span>, <span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
-<pre><code>##    chromosome base_pair_location    p_value study_accession       trait
-## 0          19           19208675 0.34851112      GCST000392 EFO_0001359
-## 1          19           19219115 0.02980604      GCST000392 EFO_0001359
-## 2          19           19224274 0.72647403      GCST000392 EFO_0001359
-## 3          19           19225799 0.09019226      GCST000392 EFO_0001359
-## 4          19           19230637 0.59469796      GCST000392 EFO_0001359
-## 5          19           19233770 0.93955453      GCST000392 EFO_0001359
-## 6          19           19247863 0.76167551      GCST000392 EFO_0001359
-## 7          19           19250926 0.24164792      GCST000392 EFO_0001359
-## 8          19           19274602 0.71375546      GCST000392 EFO_0001359
-## 9          19           19277637 0.43687139      GCST000392 EFO_0001359
-## 10         19           19280236 0.76699603      GCST000392 EFO_0001359
-## 11         19           19281592 0.70582591      GCST000392 EFO_0001359
-## 12         19           19297355 0.78331140      GCST000392 EFO_0001359</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_asso</span>(<span class="at">chr=</span><span class="dv">19</span>, <span class="at">bp_lower=</span><span class="dv">19200000</span>, <span class="at">bp_upper=</span><span class="dv">19300000</span>, <span class="at">study=</span><span class="st">&quot;GCST000392&quot;</span>)</span></code></pre></div>
 <p>To get associations for a given trait, use
 <code>get_trait_asso()</code>. You can’t restrict this to a given
 chromosome region.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_trait_asso</span>(<span class="st">&quot;EFO_0001360&quot;</span>, <span class="at">p_upper=</span><span class="fl">1e-100</span>, <span class="at">size=</span><span class="dv">5</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">nrow</span>(result)</span></code></pre></div>
-<pre><code>## [1] 5</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>result[, <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;base_pair_location&quot;</span>, <span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
-<pre><code>##   chromosome base_pair_location   p_value study_accession       trait
-## 0         14           63485893  0.00e+00      GCST006801 EFO_0001360
-## 1          8          141795579  0.00e+00      GCST006801 EFO_0001360
-## 2         10          112988738 4.38e-109      GCST006867 EFO_0001360
-## 3         10          112988858 4.96e-127      GCST006867 EFO_0001360
-## 4         10          112989975 2.98e-221      GCST006867 EFO_0001360</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_trait_asso</span>(<span class="st">&quot;EFO_0001360&quot;</span>, <span class="at">p_upper=</span><span class="fl">1e-100</span>, <span class="at">size=</span><span class="dv">5</span>)</span></code></pre></div>
 </div>
 
 
