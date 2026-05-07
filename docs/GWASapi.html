@@ -350,11 +350,11 @@ github</a>.</p>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
 <p>You can install GWASapi from <a href="https://github.com/rqtl/GWASapi">GitHub</a>.</p>
-<p>You first need to install the <a href="https://github.com/hadley/devtools">devtools</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
-<p>Then use <code>devtools::install_github()</code> to install
+<p>You first need to install the <a href="https://remotes.r-lib.org">remotes</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;remotes&quot;</span>)</span></code></pre></div>
+<p>Then use <code>remotes::install_github()</code> to install
 GWASapi.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">&quot;rqtl/GWASapi&quot;</span>)</span></code></pre></div>
 <p>Load the package with <code>library()</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(GWASapi)</span></code></pre></div>

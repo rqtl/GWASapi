@@ -1,7 +1,8 @@
 ## GWASapi - R package to connect to the [NHGRI-EBI GWAS Catalog of Summary Statistics](https://www.ebi.ac.uk/gwas)
 
 
-  [![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
+[![r-universe badge](https://rqtl.r-universe.dev/GWASapi/badges/version)](https://rqtl.r-universe.dev/GWASapi)
 
 ---
 
@@ -17,13 +18,13 @@ You can install GWASapi from
 [GitHub](https://github.com/rqtl/GWASapi).
 
 You first need to install the
-[devtools](https://github.com/hadley/devtools).
+[remotes](https://remotes.r-lib.org).
 
-    install.packages("devtools")
+    install.packages("remotes")
 
-Then use `devtools::install_github()` to install GWASapi.
+Then use `remotes::install_github()` to install GWASapi.
 
-    library(devtools)
+    library(remotes)
     install_github("rqtl/GWASapi")
 
 ---

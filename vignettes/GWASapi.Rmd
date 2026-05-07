@@ -28,16 +28,16 @@ You can install GWASapi from
 [GitHub](https://github.com/rqtl/GWASapi).
 
 You first need to install the
-[devtools](https://github.com/hadley/devtools).
+[remotes](https://remotes.r-lib.org).
 
-```{r install_devtools, eval=FALSE}
-install.packages("devtools")
+```{r install_remotes, eval=FALSE}
+install.packages("remotes")
 ```
 
-Then use `devtools::install_github()` to install GWASapi.
+Then use `remotes::install_github()` to install GWASapi.
 
-```{r install_with_devtools, eval=FALSE}
-library(devtools)
+```{r install_with_remotes, eval=FALSE}
+library(remotes)
 install_github("rqtl/GWASapi")
 ```
 
