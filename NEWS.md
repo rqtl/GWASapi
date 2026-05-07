@@ -1,3 +1,9 @@
+## GWASapi 0.1-4 (2026-05-05)
+
+- Increase the default delay time to 10 sec due to "too many requests"
+  errors.
+
+
 ## GWASapi 0.1-3 (2026-03-20)
 
 - Small change to vignette.

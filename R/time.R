@@ -28,7 +28,7 @@ function()
     # look for delay amount in options; otherwise set to default
     delay_amount <- getOption("GWASapi_delay")
     if(is.null(delay_amount)) {
-        delay_amount <- 1
+        delay_amount <- 10 # default delay time is 10 secs
     }
 
     if((timesince = time_since_gwasapi()) < delay_amount) {

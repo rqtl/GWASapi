@@ -1,6 +1,6 @@
 Package: GWASapi
-Version: 0.1-3
-Date: 2026-03-20
+Version: 0.1-4
+Date: 2026-05-07
 Title: NHGRI-EBI GWAS Catalog of Summary Statistics
 Description: Tools for connecting to the NHGRI-EBI API for GWAS summary statistics.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
