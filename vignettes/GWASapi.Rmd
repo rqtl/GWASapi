@@ -2,7 +2,7 @@
 title: GWASapi User Guide
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{R/GNapi User Guide}
+  %\VignetteIndexEntry{GWASapi User Guide}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8](inputenc)
 ---
@@ -128,8 +128,12 @@ result[,c("chromosome", "base_pair_location", "p_value", "study_accession", "tra
 To get associations for a given trait, use `get_trait_asso()`. You
 can't restrict this to a given chromosome region.
 
+```{r sys_sleep_to_avoid_error, include=FALSE}
+Sys.sleep(10)
+```
+
 ```{r get_trait_asso}
-result <- get_trait_asso("EFO_0001360", p_upper=1e-100, size=1000)
+result <- get_trait_asso("EFO_0001360", p_upper=1e-100, size=5)
 nrow(result)
-result[1:5, c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
+result[, c("chromosome", "base_pair_location", "p_value", "study_accession", "trait")]
 ```
