@@ -33,7 +33,7 @@ Data frame of associations
 Get GWAS associations for a particular trait
 }
 \examples{
-result <- get_trait_asso("EFO_0001360", p_upper=1e-10)
+\donttest{result <- get_trait_asso("EFO_0001360", p_upper=1e-10)}
 }
 \seealso{
 \code{\link[=get_variant]{get_variant()}}, \code{\link[=get_asso]{get_asso()}}
