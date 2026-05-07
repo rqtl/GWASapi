@@ -471,10 +471,10 @@ would do:</p>
 <p>To get associations for a given trait, use
 <code>get_trait_asso()</code>. You can’t restrict this to a given
 chromosome region.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_trait_asso</span>(<span class="st">&quot;EFO_0001360&quot;</span>, <span class="at">p_upper=</span><span class="fl">1e-100</span>, <span class="at">size=</span><span class="dv">1000</span>)</span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">get_trait_asso</span>(<span class="st">&quot;EFO_0001360&quot;</span>, <span class="at">p_upper=</span><span class="fl">1e-100</span>, <span class="at">size=</span><span class="dv">5</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">nrow</span>(result)</span></code></pre></div>
-<pre><code>## [1] 71</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>result[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;base_pair_location&quot;</span>, <span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>result[, <span class="fu">c</span>(<span class="st">&quot;chromosome&quot;</span>, <span class="st">&quot;base_pair_location&quot;</span>, <span class="st">&quot;p_value&quot;</span>, <span class="st">&quot;study_accession&quot;</span>, <span class="st">&quot;trait&quot;</span>)]</span></code></pre></div>
 <pre><code>##   chromosome base_pair_location   p_value study_accession       trait
 ## 0         14           63485893  0.00e+00      GCST006801 EFO_0001360
 ## 1          8          141795579  0.00e+00      GCST006801 EFO_0001360
