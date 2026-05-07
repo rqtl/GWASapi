@@ -2,7 +2,9 @@
 
 
 [![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
+<!--
 [![r-universe badge](https://rqtl.r-universe.dev/GWASapi/badges/version)](https://rqtl.r-universe.dev/GWASapi)
+-->
 
 ---
 
