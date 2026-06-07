@@ -13,6 +13,10 @@ opts_chunk$set(eval=FALSE)
 options(width=95)
 ```
 
+[![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
+[![r-universe badge](https://rqtl.r-universe.dev/GWASapi/badges/version)](https://rqtl.r-universe.dev/GWASapi)
+[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20070559.svg)](https://doi.org/10.5281/zenodo.20070559)
+
 The [GWASapi](https://github.com/rqtl/GWASapi) package provides
 access to the [NHGRI-EBI catalog of GWAS summary statistics](https://www.ebi.ac.uk/gwas).
 For details on the API, see [its

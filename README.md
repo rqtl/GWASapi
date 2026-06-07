@@ -2,7 +2,7 @@
 
 
 [![R-CMD-check](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GWASapi/actions/workflows/R-CMD-check.yaml)
-[![r-universe badge](https://kbroman.r-universe.dev/GWASapi/badges/version)](https://kbroman.r-universe.dev/GWASapi)
+[![r-universe badge](https://rqtl.r-universe.dev/GWASapi/badges/version)](https://rqtl.r-universe.dev/GWASapi)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20070559.svg)](https://doi.org/10.5281/zenodo.20070559)
 
 ---
@@ -16,10 +16,10 @@ github](https://github.com/pjotrp/racket-summary-stats).
 ### Installation
 
 Install [GWASapi](https://github.com/rqtl/GWASapi) from [R
-universe](https://kbroman.r-universe.dev/GWASapi):
+universe](https://rqtl.r-universe.dev/GWASapi):
 
 ```r
-install.packages("GWASapi", repos="https://kbroman.r-universe.dev")
+install.packages("GWASapi", repos="https://rqtl.r-universe.dev")
 ```
 
 Alternatively, install it from GitHub with the
