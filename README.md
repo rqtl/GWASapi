@@ -5,7 +5,9 @@
 [![r-universe badge](https://rqtl.r-universe.dev/GWASapi/badges/version)](https://rqtl.r-universe.dev/GWASapi)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20070559.svg)](https://doi.org/10.5281/zenodo.20070559)
 
----
+[GWASapi](https://github.com/rqtl/GWASapi) is an R package for
+connecting to the API for the
+[NHGRI-EBI GWAS Catalog of Summary Statistics](https://www.ebi.ac.uk/gwas).
 
 See the [API documentation](https://www.ebi.ac.uk/gwas/summary-statistics/docs/)
 as well as [Pjotr Prins](https://thebird.nl/)'s [documentation at
